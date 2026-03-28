@@ -6,9 +6,9 @@ current=$(pactl get-default-sink)
 
 if [ "$current" = "$SPEAKERS" ]; then
     pactl set-default-sink "$EARBUDS"
-    notify-send "Audio: Earbuds"
+    notify-send "Selected: Earbuds"
 else
     pactl set-default-sink "$SPEAKERS"
-    notify-send "Audio: Speakers"
+    notify-send "Selected: Speakers"
 fi
 
