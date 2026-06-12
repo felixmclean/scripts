@@ -7,7 +7,7 @@ if printf '%s' "$choice" | grep -qE '^[0-9+*/^() ]+$'; then
     expr=$(printf '%s' "$choice" | sed 's/\^/**/g')
     result=$(python3 -c "from math import *; print($expr)" 2>/dev/null || echo 'error')
     printf '%s' "$result" | wl-copy
-    notify-send "$result"
+    notify-send -t 6000 "$result"
 elif [ -n "$choice" ]; then
     /bin/sh -c "$choice" &
 fi
